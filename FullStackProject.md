@@ -124,7 +124,7 @@ Se usa la imagen oficial de MySQL 8.0 con variables de entorno para el usuario r
 
 ```yaml
 environment:
-  MYSQL_ROOT_PASSWORD: 12345
+  MYSQL_ROOT_PASSWORD: mipass.123$
   MYSQL_DATABASE: usuarios
 ```
 
@@ -142,7 +142,7 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_ROOT_PASSWORD: mipass.123$ 
       MYSQL_DATABASE: usuarios
     ports:
       - "3306:3306"
@@ -195,7 +195,7 @@ docker compose up --build
 
 ---
 
-## 📌 Tips adicionales
+##  Tips adicionales
 
 * Agregar un `.gitignore` para evitar subir carpetas como `node_modules` o `venv`
 * Crear respaldos del volumen si necesitás conservar los datos de MySQL
@@ -203,4 +203,3 @@ docker compose up --build
 
 ---
 
-¡Listo! Este documento sirve como referencia completa para montar y entender el proyecto completo. 🚀
