@@ -63,6 +63,7 @@ def crear_cliente(cliente: schemas.ClienteCreate, db: Session = Depends(database
 ```Dockerfile 
 FROM python:3.10
 WORKDIR /app
+RUN apt update
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
@@ -111,6 +112,7 @@ export default App;
 FROM node:18
 WORKDIR /app
 COPY package*.json ./
+RUN apt update
 RUN npm install
 COPY . .
 CMD ["npm", "start"]
@@ -162,7 +164,7 @@ services:
       DB_PORT: 3306
       DB_NAME: usuarios
       DB_USER: root
-      DB_PASS: 12345
+      DB_PASS: mipass.123$
 
   frontend:
     build: ./frontend
